@@ -31,10 +31,10 @@ class Neuron
         double * getPrevWeightDelta();
         int getNumInputs();
         double * getInput();
+		double * weights;
 
     private:
         double * input;
-        double * weights;
         double * prevWeightDelta;
         double output;
         double error;

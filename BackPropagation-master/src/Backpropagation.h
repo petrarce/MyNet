@@ -26,10 +26,10 @@ class Backpropagation
         double train(Pattern & inPattern);
         void feedForward(double * input = 0);
         double * getOutput();
+		int numLayers;
+		Layer * layers;
 
     private:
-        Layer * layers;
-        int numLayers;
         double lastError;
         Pattern * lastPattern;
 

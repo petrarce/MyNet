@@ -32,13 +32,13 @@ class Layer
         void updateWeights();
 
         Neuron * getNeurons();
+		int numInputs;
+		int numNeurons;
+		Neuron * neurons;
 
     private:
-        Neuron * neurons;
         double * input;
         double * output;
-        int numInputs;
-        int numNeurons;
         bool isOutput;
         bool isInput;
 

@@ -1,6 +1,6 @@
 #include "bolzman.h"
 
-bool RBM::RBM_train(unsigned int epochs = 3000)
+bool RBM::RBM_train()
 {
 	if(!ReadyToTrane)
 		return false;
@@ -9,7 +9,7 @@ bool RBM::RBM_train(unsigned int epochs = 3000)
 	computeHidStates();
 	//-----
 	//-----start epoches
-	for(int k=0;k<epochs;k++){
+	for(int k=0;k<Epochs;k++){
 		for(int i=0;i<NumHidSt;i++)
 			PosHidStates[i]=HidStates[i];
 		for(int i=0;i<NumVisSt;i++)
@@ -17,10 +17,10 @@ bool RBM::RBM_train(unsigned int epochs = 3000)
 
 		//start gibbs sempling
 		for(int j=0;j<15;j++){
-			computeProbs(0);
-			computeHidStates();
 			computeProbs(1);
 			computeVisStates();
+			computeProbs(0);
+			computeHidStates();
 		}
 
 		updateWeights();
@@ -34,7 +34,7 @@ bool RBM::RBM_train(unsigned int epochs = 3000)
 	return true;
 }
 
-void RBM::initBias()
+void	RBM::initBias()
 {
 	switch (biasInitTipe) {
 		case 0:
@@ -48,21 +48,21 @@ void RBM::initBias()
 	}
 }
 
-void RBM::initWeights()
+void	RBM::initWeights()
 {
-	for(int i=0;i<NumHidSt;i++){
-		for(int j=0;j<NumVisSt;j++)
+	for(int i=0;i<NumVisSt;i++){
+		for(int j=0;j<NumHidSt;j++)
 			Weights[i][j]=rand()/(RAND_MAX/2)-1;
 	}
 }
 
-void RBM::initVisiableStates()
+void	RBM::initVisiableStates()
 {
 	for(int i=0;i<NumVisSt;i++)
 		VisStates[i]=Data[i];
 }
 
-void RBM::computeProbs(unsigned short flag)
+void	RBM::computeProbs(unsigned short flag)
 {
 	switch(flag){
 		case 0:
@@ -80,12 +80,12 @@ void RBM::computeProbs(unsigned short flag)
 	}
 }
 
-double RBM::actFunc(double value)
+double	RBM::actFunc(double value)
 {
 	return 1/(1+exp(value));
 }
 
-double RBM::hidProbSum(unsigned int hidMemb)
+double	RBM::hidProbSum(unsigned int hidMemb)
 {
 	double sum=0;
 	for(int i=0;i<NumVisSt;i++)
@@ -93,11 +93,11 @@ double RBM::hidProbSum(unsigned int hidMemb)
 	return sum+=VisBiases[hidMemb];
 }
 
-double RBM::visProbSum(unsigned int visMemb)
+double	RBM::visProbSum(unsigned int visMemb)
 {
 	double sum=0;
 	for(int i=0;i<NumHidSt;i++)
-		sum+=HidStates[i]*Weights[i][visMemb];
+		sum+=HidStates[i]*Weights[visMemb][i];
 	return sum;
 }
 
@@ -140,12 +140,20 @@ void RBM::computeError()
 	}
 }
 
-RBM::RBM(vectorDouble _data, unsigned int _num_hidden, unsigned int _num_visible, double _learning_rate)
+RBM::RBM(vectorDouble _data,
+		 unsigned int _num_hidden,
+		 unsigned int _num_visible,
+		 double _learning_rate,
+		 double _eps,
+		 unsigned int _epochs )
 {
 	NumHidSt=_num_hidden;
 	NumVisSt=_num_visible;
 	LearningRate=_learning_rate;
 	Data=_data;
+	Eps=_eps;
+	Epochs=_epochs;
+
 	HidStates=new double[NumHidSt];
 	VisStates=new double[NumVisSt];
 	VisBiases=new double[NumHidSt];

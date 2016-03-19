@@ -15,7 +15,11 @@ typedef double*		vectorDouble;
 
 class RBM
 {
-   private:
+	public:
+		unsigned int NumHidSt;
+		unsigned int NumVisSt;
+		matrixDouble Weights;		//Weight[i][j] i-visiable member, j-hedden member
+	private:
 		//bool net_stat;					//??
 		bool ReadyToTrane=false;			//training flag
 		bool biasInitTipe;
@@ -26,8 +30,6 @@ class RBM
 
 		//ofstream log_file;
 
-		unsigned int NumHidSt;
-		unsigned int NumVisSt;
 		//unsigned int train_data_rows;
 		//unsigned int train_data_cols;
 
@@ -40,7 +42,6 @@ class RBM
 		vectorDouble PosHidStates;
 		vectorDouble PosVisStates;
 
-		matrixDouble Weights;		//Weight[i][j] i-visiable member, j-hedden member
 		vectorDouble VisBiases;
 
 		//vectorDouble PosAssociations;
@@ -54,7 +55,12 @@ class RBM
 
 		/* Constructor Functions */
 		RBM();
-		RBM(vectorDouble _data, unsigned int _num_hidden, unsigned int _num_visible, double _learning_rate);
+		RBM(vectorDouble _data,
+			unsigned int _num_hidden,
+			unsigned int _num_visible,
+			double _learning_rate,
+			double _eps=0.01,
+			uint32_t _epochs=3000);
 		~RBM();
 
 
@@ -76,8 +82,10 @@ class RBM
 		void computeProbs(unsigned short flag);	//visiable-1;hidden-0;
 		void computeVisStates();
 		void computeHidStates();
-		bool RBM_train(unsigned int epochs);
+		bool RBM_train();
 	private :
 		double hidProbSum(unsigned int hidMemb);
 		double visProbSum(unsigned int visMemb);
+
+		void transpWeights();
 };

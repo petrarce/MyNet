@@ -8,7 +8,9 @@
 #include <vector>
 #include <limits>
 #include <sys/time.h>
+#include <random>
 #include "BackPropagation-master/src/Backpropagation.h"
+#include "bolzman/bolzman.h"
 
 using namespace std;
 
@@ -37,6 +39,28 @@ int main()
     Pattern fourthPattern(patternSize, (double *)&myTestFour, &fourOut);
 	//-----Create network with using network pattern and size of inpet data
 	Backpropagation * myNeuralNetwork = new Backpropagation(myNet, patternSize);
+	//-----
+
+	//-----Init weights using RBM
+	double** Data=(double**)malloc(myNeuralNetwork->numLayers);
+	RBM** myRbms=(RBM**)malloc(sizeof(RBM)*myNeuralNetwork->numLayers);
+	//RBM myRbms[myNeuralNetwork->numLayers];
+	for(int i=0;i<myNeuralNetwork->numLayers;i++){
+		Data[i]=(double*)malloc(myNeuralNetwork->layers[i].numInputs);
+		for(int j=0;j<myNeuralNetwork->layers[i].numInputs;j++)
+			Data[i][j]=(rand()/RAND_MAX>0.5)?1:0;
+		myRbms[i]=new RBM(Data[i],
+					  myNeuralNetwork->layers[i].numNeurons,
+					  myNeuralNetwork->layers[i].numInputs,
+					  0.3,
+					  0.01,3000);
+		myRbms[i]->RBM_train();
+		for(int j=0;j<myRbms[i]->NumHidSt;j++)
+			for(int k=0;k<myRbms[i]->NumVisSt;k++)
+				myNeuralNetwork->layers[i].neurons[j].weights[k]=myRbms[i]->Weights[k][j];
+		myRbms[i]->~RBM();
+		delete myRbms[i];
+	}
 	//-----
 
     double errors[4];
