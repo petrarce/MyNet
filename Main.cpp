@@ -17,20 +17,20 @@ using namespace std;
 int main()
 {
 	//-----Create network pattern
-    const int myNetArray[3] = {3, 2, 1};
+	const int myNetArray[3] = {20, 2, 1};
     vector<int> myNet(myNetArray, myNetArray + sizeof(myNetArray) / sizeof(int));
 	//-----
 	//-----Create input-output paterns pattern
 
-    const int patternSize = 2;
+	const int patternSize = 6;
 
-	const double myTestOne[patternSize] = {1, 1};
+	const double myTestOne[patternSize] = {1, 1,0,1,0,0};
     double oneOut = 0;
-    const double myTestTwo[patternSize] = {1, 0};
+	const double myTestTwo[patternSize] = {1, 0,1,1,0,0};
     double twoOut = 1;
-    const double myTestThree[patternSize] = {0, 1};
-    double threeOut = 1;
-    const double myTestFour[patternSize] = {0, 0};
+	const double myTestThree[patternSize] = {0, 1,1,1,1,1};
+	double threeOut = 1;
+	const double myTestFour[patternSize] = {0, 0,0,1,1,0};
     double fourOut = 0;
 
     Pattern firstPattern(patternSize, (double *)&myTestOne, &oneOut);
@@ -42,25 +42,32 @@ int main()
 	//-----
 
 	//-----Init weights using RBM
-	double** Data=(double**)malloc(myNeuralNetwork->numLayers);
-	RBM** myRbms=(RBM**)malloc(sizeof(RBM)*myNeuralNetwork->numLayers);
-	//RBM myRbms[myNeuralNetwork->numLayers];
-	for(int i=0;i<myNeuralNetwork->numLayers;i++){
-		Data[i]=(double*)malloc(myNeuralNetwork->layers[i].numInputs);
-		for(int j=0;j<myNeuralNetwork->layers[i].numInputs;j++)
-			Data[i][j]=(rand()/RAND_MAX>0.5)?1:0;
-		myRbms[i]=new RBM(Data[i],
-					  myNeuralNetwork->layers[i].numNeurons,
-					  myNeuralNetwork->layers[i].numInputs,
-					  0.3,
-					  0.01,3000);
-		myRbms[i]->RBM_train();
-		for(int j=0;j<myRbms[i]->NumHidSt;j++)
-			for(int k=0;k<myRbms[i]->NumVisSt;k++)
-				myNeuralNetwork->layers[i].neurons[j].weights[k]=myRbms[i]->Weights[k][j];
-		myRbms[i]->~RBM();
-		delete myRbms[i];
-	}
+//	double* Data;//=(double*)malloc(myNeuralNetwork->numLayers);
+//	RBM myRbms;
+//	for(int i=0;i<myNeuralNetwork->numLayers;i++){
+//		//---Create Dataset
+//		Data=new double[myNeuralNetwork->layers[i].numInputs];
+//		for(int j=0;j<myNeuralNetwork->layers[i].numInputs;j++){
+//			if(!j){
+//				Data[j]=1;
+//				continue;
+//			}
+//			Data[j]=(Data[j-1]==1)?0:1;
+//		}
+//		//---
+//		myRbms.initRBM(Data,
+//					   myNeuralNetwork->layers[i].numNeurons,
+//					   myNeuralNetwork->layers[i].numInputs,
+//					   0.1,
+//					   0.01,
+//					   3000);
+//		myRbms.RBM_train();
+//		for(unsigned int j=0;j<myRbms.NumHidSt;j++)
+//			for(unsigned int k=0;k<myRbms.NumVisSt;k++)
+//				myNeuralNetwork->layers[i].neurons[j].weights[k]=myRbms.Weights[k][j];
+//		myRbms.~RBM();
+//		delete[] Data;
+//	}
 	//-----
 
     double errors[4];

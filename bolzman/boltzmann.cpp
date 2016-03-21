@@ -9,14 +9,14 @@ bool RBM::RBM_train()
 	computeHidStates();
 	//-----
 	//-----start epoches
-	for(int k=0;k<Epochs;k++){
-		for(int i=0;i<NumHidSt;i++)
+	for(unsigned int k=0;k<Epochs;k++){
+		for(unsigned int i=0;i<NumHidSt;i++)
 			PosHidStates[i]=HidStates[i];
-		for(int i=0;i<NumVisSt;i++)
+		for(unsigned int i=0;i<NumVisSt;i++)
 			PosVisStates[i]=VisStates[i];
 
 		//start gibbs sempling
-		for(int j=0;j<15;j++){
+		for(unsigned int j=0;j<5;j++){
 			computeProbs(1);
 			computeVisStates();
 			computeProbs(0);
@@ -26,7 +26,6 @@ bool RBM::RBM_train()
 		updateWeights();
 		updateVisiableBiases();
 		computeError();
-
 		if(Error<Eps)
 			break;
 	}
@@ -38,11 +37,11 @@ void	RBM::initBias()
 {
 	switch (biasInitTipe) {
 		case 0:
-			for(int i=0;i<NumHidSt;i++)
+			for(unsigned int i=0;i<NumHidSt;i++)
 				VisBiases[i]=0;
 			break;
 		default:
-			for(int i=0;i<NumHidSt;i++)
+			for(unsigned int i=0;i<NumHidSt;i++)
 				VisBiases[i]=rand()/(RAND_MAX/2)-1;
 			break;
 	}
@@ -50,15 +49,18 @@ void	RBM::initBias()
 
 void	RBM::initWeights()
 {
-	for(int i=0;i<NumVisSt;i++){
-		for(int j=0;j<NumHidSt;j++)
-			Weights[i][j]=rand()/(RAND_MAX/2)-1;
+	int tempValue;
+	for(unsigned int i=0;i<NumVisSt;i++){
+		for(unsigned int j=0;j<NumHidSt;j++){
+			tempValue=rand();
+			Weights[i][j]=0.01*(((double)tempValue)/((double)RAND_MAX/2)-1);
+		}
 	}
 }
 
 void	RBM::initVisiableStates()
 {
-	for(int i=0;i<NumVisSt;i++)
+	for(unsigned int i=0;i<NumVisSt;i++)
 		VisStates[i]=Data[i];
 }
 
@@ -66,12 +68,12 @@ void	RBM::computeProbs(unsigned short flag)
 {
 	switch(flag){
 		case 0:
-			for(int i=0;i<NumHidSt;i++){
+			for(unsigned int i=0;i<NumHidSt;i++){
 				HidProbs[i]=actFunc(hidProbSum(i));
 			}
 			break;
 		case 1:
-			for(int i=0;i<NumVisSt;i++){
+			for(unsigned int i=0;i<NumVisSt;i++){
 				VisProbs[i]=actFunc(visProbSum(i));
 			}
 			break;
@@ -88,7 +90,7 @@ double	RBM::actFunc(double value)
 double	RBM::hidProbSum(unsigned int hidMemb)
 {
 	double sum=0;
-	for(int i=0;i<NumVisSt;i++)
+	for(unsigned int i=0;i<NumVisSt;i++)
 		sum+=VisStates[i]*Weights[i][hidMemb];
 	return sum+=VisBiases[hidMemb];
 }
@@ -96,7 +98,7 @@ double	RBM::hidProbSum(unsigned int hidMemb)
 double	RBM::visProbSum(unsigned int visMemb)
 {
 	double sum=0;
-	for(int i=0;i<NumHidSt;i++)
+	for(unsigned int i=0;i<NumHidSt;i++)
 		sum+=HidStates[i]*Weights[visMemb][i];
 	return sum;
 }
@@ -104,8 +106,8 @@ double	RBM::visProbSum(unsigned int visMemb)
 void RBM::computeHidStates()
 {
 	double randVal;
-	for(int i=0;i<NumHidSt;i++){
-		randVal=rand()/RAND_MAX;
+	for(unsigned int i=0;i<NumHidSt;i++){
+		randVal=(double)rand()/(double)RAND_MAX;
 		HidStates[i]=(randVal>HidProbs[i])?0:1;
 	}
 }
@@ -113,39 +115,40 @@ void RBM::computeHidStates()
 void RBM::computeVisStates()
 {
 	double randVal;
-	for(int i=0;i<NumHidSt;i++){
-		randVal=rand()/RAND_MAX;
+	for(unsigned int i=0;i<NumVisSt;i++){
+		randVal=(double)rand()/(double)RAND_MAX;
 		VisStates[i]=(randVal>VisProbs[i])?0:1;
 	}
 }
 
 void RBM::updateWeights()
 {
-	for(int i=0;i<NumVisSt;i++){
-		for(int j=0;j<NumHidSt;j++)
+	for(unsigned int i=0;i<NumVisSt;i++){
+		for(unsigned int j=0;j<NumHidSt;j++)
 			Weights[i][j]+=LearningRate*(PosHidStates[j]*PosVisStates[i]-HidStates[j]*VisStates[i]);
 	}
 }
 
 void RBM::updateVisiableBiases()
 {
-	for(int i=0;i<NumHidSt;i++)
+	for(unsigned int i=0;i<NumHidSt;i++)
 		VisBiases[i]+=LearningRate*(PosVisStates[i]-VisStates[i]);
 }
 
 void RBM::computeError()
 {
-	for(int i=0;i<NumHidSt;i++){
+	Error=0;
+	for(unsigned int i=0;i<NumHidSt;i++){
 		Error+=pow(PosHidProbs[i]-HidProbs[i],2);
 	}
 }
 
-RBM::RBM(vectorDouble _data,
-		 unsigned int _num_hidden,
-		 unsigned int _num_visible,
-		 double _learning_rate,
-		 double _eps,
-		 unsigned int _epochs )
+void RBM::initRBM(vectorDouble	_data,
+				  unsigned int	_num_hidden,
+				  unsigned int	_num_visible,
+				  double		_learning_rate,
+				  double		_eps,
+				  uint32_t		_epochs)
 {
 	NumHidSt=_num_hidden;
 	NumVisSt=_num_visible;
@@ -163,8 +166,8 @@ RBM::RBM(vectorDouble _data,
 	VisProbs=new double[NumVisSt];
 	HidProbs=new double[NumHidSt];
 	PosHidProbs=new double[NumHidSt];
-	Weights=(double**)malloc(NumVisSt);
-	for(int i=0;i<NumVisSt;i++){
+	Weights=new double*[NumVisSt];
+	for(unsigned int i=0;i<NumVisSt;i++){
 		Weights[i]=new double[NumHidSt];
 	}
 
@@ -174,21 +177,22 @@ RBM::RBM(vectorDouble _data,
 	ReadyToTrane=true;
 
 }
+RBM::RBM() { }
 
 RBM::~RBM()
 {
-	delete HidStates;
-	delete VisStates;
-	delete VisBiases;
-	delete PosHidStates;
-	delete PosVisStates;
+	delete[] HidStates;
+	delete[] VisStates;
+	delete[] VisBiases;
+	delete[] PosHidStates;
+	delete[] PosVisStates;
 
-	delete VisProbs;
-	delete HidProbs;
-	delete PosHidProbs;
-	for(int i=0;i<NumVisSt;i++){
-		delete Weights[i];
+	delete[] VisProbs;
+	delete[] HidProbs;
+	delete[] PosHidProbs;
+	for(unsigned int i=0;i<NumVisSt;i++){
+//		delete [] Weights[i];
 	}
-	delete Weights;
+	delete[]  Weights;
 	ReadyToTrane=false;
 }

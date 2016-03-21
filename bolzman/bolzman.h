@@ -54,13 +54,13 @@ class RBM
 	public:
 
 		/* Constructor Functions */
-		RBM();
-		RBM(vectorDouble _data,
+		void initRBM(vectorDouble _data,
 			unsigned int _num_hidden,
 			unsigned int _num_visible,
 			double _learning_rate,
 			double _eps=0.01,
 			uint32_t _epochs=3000);
+		RBM();
 		~RBM();
 
 
@@ -87,5 +87,4 @@ class RBM
 		double hidProbSum(unsigned int hidMemb);
 		double visProbSum(unsigned int visMemb);
 
-		void transpWeights();
 };
