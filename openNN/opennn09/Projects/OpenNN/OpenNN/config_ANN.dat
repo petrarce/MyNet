@@ -1,0 +1,15 @@
+P_ATr			# Name of the network
+22			# Input Variables
+6			# Output Variables
+2			# Min Hidden neurons
+35			# Max Hidden neurons
+DataSet_Generic.dat	# Name of Dataset
+0.0001			# EvaluationGoal eg
+0.0001			# GradientNormGoal gn
+50000.0			# MaximumTime mt
+50000			# MaximumNumberOfEpochs epc
+10			# Display period dspd
+master_generic.dat	# Master File
+Var1 Unit1		# Name and units for Input 1
+Var2 Unit2		# Name and units for Input 2
+Var3 Unit3		# Name and units for Input 1

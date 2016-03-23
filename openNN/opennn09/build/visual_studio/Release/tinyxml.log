@@ -1,0 +1,25 @@
+﻿Build started 10/01/2013 16:14:13.
+     1>Project "C:\CIMNE\Codi\opennn09\build\visual_studio\tinyxml.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\tinyxml.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _LIB /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\parsers\tinyxml\tinystr.cpp ..\..\parsers\tinyxml\tinyxml.cpp ..\..\parsers\tinyxml\tinyxmlerror.cpp ..\..\parsers\tinyxml\tinyxmlparser.cpp
+         tinystr.cpp
+         tinyxml.cpp
+         tinyxmlerror.cpp
+         tinyxmlparser.cpp
+         Generating Code...
+       Lib:
+         C:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"Release\tinyxml.lib" /NOLOGO Release\tinystr.obj
+         Release\tinyxml.obj
+         Release\tinyxmlerror.obj
+         Release\tinyxmlparser.obj
+         tinyxml.vcxproj -> C:\CIMNE\Codi\opennn09\build\visual_studio\Release\tinyxml.lib
+       FinalizeBuildStatus:
+         Deleting file "Release\tinyxml.unsuccessfulbuild".
+         Touching "Release\tinyxml.lastbuildstate".
+     1>Done Building Project "C:\CIMNE\Codi\opennn09\build\visual_studio\tinyxml.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.93

@@ -1,0 +1,138 @@
+﻿Build started 10/01/2013 16:14:51.
+     1>Project "C:\CIMNE\Codi\opennn09\build\visual_studio\opennn_tests.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\opennn_tests.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\tests\data_set_tests\data_set_test.cpp ..\..\tests\data_set_tests\instances_information_test.cpp ..\..\tests\data_set_tests\variables_information_test.cpp ..\..\tests\mathematical_model_tests\mathematical_model_test.cpp ..\..\tests\mathematical_model_tests\mock_ordinary_differential_equations.cpp ..\..\tests\mathematical_model_tests\ordinary_differential_equations_test.cpp ..\..\tests\mathematical_model_tests\plug_in_test.cpp ..\..\tests\model_selection_tests\model_selection_test.cpp ..\..\tests\neural_network_tests\bounding_layer_test.cpp ..\..\tests\neural_network_tests\conditions_layer_test.cpp ..\..\tests\neural_network_tests\independent_parameters_test.cpp ..\..\tests\neural_network_tests\inputs_outputs_information_test.cpp ..\..\tests\neural_network_tests\multilayer_perceptron_test.cpp ..\..\tests\neural_network_tests\neural_network_test.cpp ..\..\tests\neural_network_tests\perceptron_layer_test.cpp ..\..\tests\neural_network_tests\perceptron_test.cpp ..\..\tests\neural_network_tests\probabilistic_layer_test.cpp ..\..\tests\neural_network_tests\scaling_layer_test.cpp ..\..\tests\neural_network_tests\unscaling_layer_test.cpp ..\..\tests\performance_functional_tests\cross_entropy_error_test.cpp ..\..\tests\performance_functional_tests\final_solutions_error_test.cpp ..\..\tests\performance_functional_tests\independent_parameters_error_test.cpp ..\..\tests\performance_functional_tests\inverse_sum_squared_error_test.cpp ..\..\tests\performance_functional_tests\mean_squared_error_test.cpp ..\..\tests\performance_functional_tests\minkowski_error_test.cpp ..\..\tests\performance_functional_tests\mock_performance_term.cpp ..\..\tests\performance_functional_tests\neural_parameters_norm_test.cpp ..\..\tests\performance_functional_tests\normalized_squared_error_test.cpp ..\..\tests\performance_functional_tests\outputs_integrals_test.cpp ..\..\tests\performance_functional_tests\performance_functional_test.cpp ..\..\tests\performance_functional_tests\performance_term_test.cpp ..\..\tests\performance_functional_tests\polynomial.cpp ..\..\tests\performance_functional_tests\root_mean_squared_error_test.cpp ..\..\tests\performance_functional_tests\solutions_error_test.cpp ..\..\tests\performance_functional_tests\sum_squared_error_test.cpp ..\..\tests\suite_tests_application.cpp ..\..\tests\testing_analysis_tests\function_regression_testing_test.cpp ..\..\tests\testing_analysis_tests\inverse_problem_testing_test.cpp ..\..\tests\testing_analysis_tests\pattern_recognition_testing_test.cpp ..\..\tests\testing_analysis_tests\testing_analysis_test.cpp ..\..\tests\testing_analysis_tests\time_series_prediction_testing_test.cpp ..\..\tests\training_strategy_tests\conjugate_gradient_test.cpp ..\..\tests\training_strategy_tests\evolutionary_algorithm_test.cpp ..\..\tests\training_strategy_tests\gradient_descent_test.cpp ..\..\tests\training_strategy_tests\levenberg_marquardt_algorithm_test.cpp ..\..\tests\training_strategy_tests\mock_training_algorithm.cpp ..\..\tests\training_strategy_tests\newton_method_test.cpp ..\..\tests\training_strategy_tests\quasi_newton_method_test.cpp ..\..\tests\training_strategy_tests\random_search_test.cpp ..\..\tests\training_strategy_tests\training_algorithm_test.cpp ..\..\tests\training_strategy_tests\training_rate_algorithm_test.cpp ..\..\tests\training_strategy_tests\training_strategy_test.cpp ..\..\tests\unit_testing.cpp ..\..\tests\utilities_tests\linear_algebraic_equations_test.cpp ..\..\tests\utilities_tests\matrix_test.cpp ..\..\tests\utilities_tests\numerical_differentiation_test.cpp ..\..\tests\utilities_tests\numerical_integration_test.cpp ..\..\tests\utilities_tests\vector_test.cpp
+         data_set_test.cpp
+         instances_information_test.cpp
+         variables_information_test.cpp
+         mathematical_model_test.cpp
+         mock_ordinary_differential_equations.cpp
+         ordinary_differential_equations_test.cpp
+         plug_in_test.cpp
+         model_selection_test.cpp
+         bounding_layer_test.cpp
+         conditions_layer_test.cpp
+         independent_parameters_test.cpp
+         inputs_outputs_information_test.cpp
+         multilayer_perceptron_test.cpp
+         neural_network_test.cpp
+         perceptron_layer_test.cpp
+         perceptron_test.cpp
+         probabilistic_layer_test.cpp
+         scaling_layer_test.cpp
+         unscaling_layer_test.cpp
+         cross_entropy_error_test.cpp
+         Compiling...
+         final_solutions_error_test.cpp
+         independent_parameters_error_test.cpp
+         inverse_sum_squared_error_test.cpp
+         mean_squared_error_test.cpp
+         minkowski_error_test.cpp
+         mock_performance_term.cpp
+         neural_parameters_norm_test.cpp
+         normalized_squared_error_test.cpp
+         outputs_integrals_test.cpp
+         performance_functional_test.cpp
+         performance_term_test.cpp
+         polynomial.cpp
+         root_mean_squared_error_test.cpp
+         solutions_error_test.cpp
+         sum_squared_error_test.cpp
+         suite_tests_application.cpp
+         function_regression_testing_test.cpp
+         inverse_problem_testing_test.cpp
+         pattern_recognition_testing_test.cpp
+         testing_analysis_test.cpp
+         Compiling...
+         time_series_prediction_testing_test.cpp
+         conjugate_gradient_test.cpp
+         evolutionary_algorithm_test.cpp
+         gradient_descent_test.cpp
+         levenberg_marquardt_algorithm_test.cpp
+         mock_training_algorithm.cpp
+         newton_method_test.cpp
+         quasi_newton_method_test.cpp
+         random_search_test.cpp
+         training_algorithm_test.cpp
+         training_rate_algorithm_test.cpp
+         training_strategy_test.cpp
+         unit_testing.cpp
+         linear_algebraic_equations_test.cpp
+         matrix_test.cpp
+         numerical_differentiation_test.cpp
+         numerical_integration_test.cpp
+         vector_test.cpp
+       Link:
+         C:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\CIMNE\Codi\opennn09\build\visual_studio\Release\opennn_tests.exe" /NOLOGO /LIBPATH:Release tinyxml.lib opennn.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\opennn_tests.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\CIMNE\Codi\opennn09\build\visual_studio\Release\opennn_tests.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\CIMNE\Codi\opennn09\build\visual_studio\Release\opennn_tests.lib" /MACHINE:X86 Release\data_set_test.obj
+         Release\instances_information_test.obj
+         Release\variables_information_test.obj
+         Release\mathematical_model_test.obj
+         Release\mock_ordinary_differential_equations.obj
+         Release\ordinary_differential_equations_test.obj
+         Release\plug_in_test.obj
+         Release\model_selection_test.obj
+         Release\bounding_layer_test.obj
+         Release\conditions_layer_test.obj
+         Release\independent_parameters_test.obj
+         Release\inputs_outputs_information_test.obj
+         Release\multilayer_perceptron_test.obj
+         Release\neural_network_test.obj
+         Release\perceptron_layer_test.obj
+         Release\perceptron_test.obj
+         Release\probabilistic_layer_test.obj
+         Release\scaling_layer_test.obj
+         Release\unscaling_layer_test.obj
+         Release\cross_entropy_error_test.obj
+         Release\final_solutions_error_test.obj
+         Release\independent_parameters_error_test.obj
+         Release\inverse_sum_squared_error_test.obj
+         Release\mean_squared_error_test.obj
+         Release\minkowski_error_test.obj
+         Release\mock_performance_term.obj
+         Release\neural_parameters_norm_test.obj
+         Release\normalized_squared_error_test.obj
+         Release\outputs_integrals_test.obj
+         Release\performance_functional_test.obj
+         Release\performance_term_test.obj
+         Release\polynomial.obj
+         Release\root_mean_squared_error_test.obj
+         Release\solutions_error_test.obj
+         Release\sum_squared_error_test.obj
+         Release\suite_tests_application.obj
+         Release\function_regression_testing_test.obj
+         Release\inverse_problem_testing_test.obj
+         Release\pattern_recognition_testing_test.obj
+         Release\testing_analysis_test.obj
+         Release\time_series_prediction_testing_test.obj
+         Release\conjugate_gradient_test.obj
+         Release\evolutionary_algorithm_test.obj
+         Release\gradient_descent_test.obj
+         Release\levenberg_marquardt_algorithm_test.obj
+         Release\mock_training_algorithm.obj
+         Release\newton_method_test.obj
+         Release\quasi_newton_method_test.obj
+         Release\random_search_test.obj
+         Release\training_algorithm_test.obj
+         Release\training_rate_algorithm_test.obj
+         Release\training_strategy_test.obj
+         Release\unit_testing.obj
+         Release\linear_algebraic_equations_test.obj
+         Release\matrix_test.obj
+         Release\numerical_differentiation_test.obj
+         Release\numerical_integration_test.obj
+         Release\vector_test.obj
+         Generating code
+         Finished generating code
+         opennn_tests.vcxproj -> C:\CIMNE\Codi\opennn09\build\visual_studio\Release\opennn_tests.exe
+       Manifest:
+         C:\Archivos de programa\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\CIMNE\Codi\opennn09\build\visual_studio\Release\opennn_tests.exe;#1" /manifest Release\opennn_tests.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\opennn_tests.unsuccessfulbuild".
+         Touching "Release\opennn_tests.lastbuildstate".
+     1>Done Building Project "C:\CIMNE\Codi\opennn09\build\visual_studio\opennn_tests.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:01.04

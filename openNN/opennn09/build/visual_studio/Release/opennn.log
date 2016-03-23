@@ -1,0 +1,118 @@
+﻿Build started 10/01/2013 16:14:16.
+     1>Project "C:\CIMNE\Codi\opennn09\build\visual_studio\opennn.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\opennn.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\source\data_set\data_set.cpp ..\..\source\data_set\instances_information.cpp ..\..\source\data_set\variables_information.cpp ..\..\source\mathematical_model\mathematical_model.cpp ..\..\source\mathematical_model\ordinary_differential_equations.cpp ..\..\source\mathematical_model\plug_in.cpp ..\..\source\model_selection\model_selection.cpp ..\..\source\neural_network\bounding_layer.cpp ..\..\source\neural_network\conditions_layer.cpp ..\..\source\neural_network\independent_parameters.cpp ..\..\source\neural_network\inputs_outputs_information.cpp ..\..\source\neural_network\multilayer_perceptron.cpp ..\..\source\neural_network\neural_network.cpp ..\..\source\neural_network\perceptron.cpp ..\..\source\neural_network\perceptron_layer.cpp ..\..\source\neural_network\probabilistic_layer.cpp ..\..\source\neural_network\scaling_layer.cpp ..\..\source\neural_network\unscaling_layer.cpp ..\..\source\performance_functional\cross_entropy_error.cpp ..\..\source\performance_functional\final_solutions_error.cpp ..\..\source\performance_functional\independent_parameters_error.cpp ..\..\source\performance_functional\inverse_sum_squared_error.cpp ..\..\source\performance_functional\mean_squared_error.cpp ..\..\source\performance_functional\minkowski_error.cpp ..\..\source\performance_functional\neural_parameters_norm.cpp ..\..\source\performance_functional\normalized_squared_error.cpp ..\..\source\performance_functional\outputs_integrals.cpp ..\..\source\performance_functional\performance_functional.cpp ..\..\source\performance_functional\performance_term.cpp ..\..\source\performance_functional\root_mean_squared_error.cpp ..\..\source\performance_functional\solutions_error.cpp ..\..\source\performance_functional\sum_squared_error.cpp ..\..\source\testing_analysis\function_regression_testing.cpp ..\..\source\testing_analysis\inverse_problem_testing.cpp ..\..\source\testing_analysis\pattern_recognition_testing.cpp ..\..\source\testing_analysis\testing_analysis.cpp ..\..\source\testing_analysis\time_series_prediction_testing.cpp ..\..\source\training_strategy\conjugate_gradient.cpp ..\..\source\training_strategy\evolutionary_algorithm.cpp ..\..\source\training_strategy\gradient_descent.cpp ..\..\source\training_strategy\levenberg_marquardt_algorithm.cpp ..\..\source\training_strategy\newton_method.cpp ..\..\source\training_strategy\quasi_newton_method.cpp ..\..\source\training_strategy\random_search.cpp ..\..\source\training_strategy\training_algorithm.cpp ..\..\source\training_strategy\training_rate_algorithm.cpp ..\..\source\training_strategy\training_strategy.cpp ..\..\source\utilities\linear_algebraic_equations.cpp ..\..\source\utilities\numerical_differentiation.cpp ..\..\source\utilities\numerical_integration.cpp
+         data_set.cpp
+         instances_information.cpp
+         variables_information.cpp
+         mathematical_model.cpp
+         ordinary_differential_equations.cpp
+         plug_in.cpp
+         model_selection.cpp
+         bounding_layer.cpp
+         conditions_layer.cpp
+         independent_parameters.cpp
+         inputs_outputs_information.cpp
+         multilayer_perceptron.cpp
+         neural_network.cpp
+         perceptron.cpp
+         perceptron_layer.cpp
+         probabilistic_layer.cpp
+         scaling_layer.cpp
+         unscaling_layer.cpp
+         cross_entropy_error.cpp
+         final_solutions_error.cpp
+         Compiling...
+         independent_parameters_error.cpp
+         inverse_sum_squared_error.cpp
+         mean_squared_error.cpp
+         minkowski_error.cpp
+         neural_parameters_norm.cpp
+         normalized_squared_error.cpp
+         outputs_integrals.cpp
+         performance_functional.cpp
+         performance_term.cpp
+         root_mean_squared_error.cpp
+         solutions_error.cpp
+         sum_squared_error.cpp
+         function_regression_testing.cpp
+         inverse_problem_testing.cpp
+         pattern_recognition_testing.cpp
+         testing_analysis.cpp
+         time_series_prediction_testing.cpp
+         conjugate_gradient.cpp
+         evolutionary_algorithm.cpp
+         gradient_descent.cpp
+         Compiling...
+         levenberg_marquardt_algorithm.cpp
+         newton_method.cpp
+         quasi_newton_method.cpp
+         random_search.cpp
+         training_algorithm.cpp
+         training_rate_algorithm.cpp
+         training_strategy.cpp
+         linear_algebraic_equations.cpp
+         numerical_differentiation.cpp
+         numerical_integration.cpp
+       Lib:
+         C:\Archivos de programa\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"Release\opennn.lib" /NOLOGO /LTCG Release\data_set.obj
+         Release\instances_information.obj
+         Release\variables_information.obj
+         Release\mathematical_model.obj
+         Release\ordinary_differential_equations.obj
+         Release\plug_in.obj
+         Release\model_selection.obj
+         Release\bounding_layer.obj
+         Release\conditions_layer.obj
+         Release\independent_parameters.obj
+         Release\inputs_outputs_information.obj
+         Release\multilayer_perceptron.obj
+         Release\neural_network.obj
+         Release\perceptron.obj
+         Release\perceptron_layer.obj
+         Release\probabilistic_layer.obj
+         Release\scaling_layer.obj
+         Release\unscaling_layer.obj
+         Release\cross_entropy_error.obj
+         Release\final_solutions_error.obj
+         Release\independent_parameters_error.obj
+         Release\inverse_sum_squared_error.obj
+         Release\mean_squared_error.obj
+         Release\minkowski_error.obj
+         Release\neural_parameters_norm.obj
+         Release\normalized_squared_error.obj
+         Release\outputs_integrals.obj
+         Release\performance_functional.obj
+         Release\performance_term.obj
+         Release\root_mean_squared_error.obj
+         Release\solutions_error.obj
+         Release\sum_squared_error.obj
+         Release\function_regression_testing.obj
+         Release\inverse_problem_testing.obj
+         Release\pattern_recognition_testing.obj
+         Release\testing_analysis.obj
+         Release\time_series_prediction_testing.obj
+         Release\conjugate_gradient.obj
+         Release\evolutionary_algorithm.obj
+         Release\gradient_descent.obj
+         Release\levenberg_marquardt_algorithm.obj
+         Release\newton_method.obj
+         Release\quasi_newton_method.obj
+         Release\random_search.obj
+         Release\training_algorithm.obj
+         Release\training_rate_algorithm.obj
+         Release\training_strategy.obj
+         Release\linear_algebraic_equations.obj
+         Release\numerical_differentiation.obj
+         Release\numerical_integration.obj
+         opennn.vcxproj -> C:\CIMNE\Codi\opennn09\build\visual_studio\Release\opennn.lib
+       FinalizeBuildStatus:
+         Deleting file "Release\opennn.unsuccessfulbuild".
+         Touching "Release\opennn.lastbuildstate".
+     1>Done Building Project "C:\CIMNE\Codi\opennn09\build\visual_studio\opennn.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:34.34

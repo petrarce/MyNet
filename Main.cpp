@@ -14,7 +14,7 @@
 
 using namespace std;
 
-int main()
+int main1()
 {
 	//-----Create network pattern
 	const int myNetArray[3] = {20, 2, 1};

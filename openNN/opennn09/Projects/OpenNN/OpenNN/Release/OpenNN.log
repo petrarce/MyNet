@@ -1,0 +1,78 @@
+﻿Build started 23/04/2014 12:06:59.
+     1>Project "C:\CIMNE\Codi\opennn09\Projects\OpenNN\OpenNN\OpenNN.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\OpenNN.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\examples\yacht_resistance_design\yacht_resistance_design_application.cpp
+         yacht_resistance_design_application.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\CIMNE\Codi\opennn09\Projects\OpenNN\Release\OpenNN.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\OpenNN.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\CIMNE\Codi\opennn09\Projects\OpenNN\Release\OpenNN.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\CIMNE\Codi\opennn09\Projects\OpenNN\Release\OpenNN.lib" /MACHINE:X86 Release\yacht_resistance_design_application.obj
+         Release\tinystr.obj
+         Release\tinyxml.obj
+         Release\tinyxmlerror.obj
+         Release\tinyxmlparser.obj
+         Release\data_set.obj
+         Release\instances_information.obj
+         Release\variables_information.obj
+         Release\mathematical_model.obj
+         Release\ordinary_differential_equations.obj
+         Release\plug_in.obj
+         Release\model_selection.obj
+         Release\bounding_layer.obj
+         Release\conditions_layer.obj
+         Release\independent_parameters.obj
+         Release\inputs_outputs_information.obj
+         Release\multilayer_perceptron.obj
+         Release\neural_network.obj
+         Release\perceptron.obj
+         Release\perceptron_layer.obj
+         Release\probabilistic_layer.obj
+         Release\scaling_layer.obj
+         Release\unscaling_layer.obj
+         Release\cross_entropy_error.obj
+         Release\final_solutions_error.obj
+         Release\independent_parameters_error.obj
+         Release\inverse_sum_squared_error.obj
+         Release\mean_squared_error.obj
+         Release\minkowski_error.obj
+         Release\neural_parameters_norm.obj
+         Release\normalized_squared_error.obj
+         Release\outputs_integrals.obj
+         Release\performance_functional.obj
+         Release\performance_term.obj
+         Release\root_mean_squared_error.obj
+         Release\solutions_error.obj
+         Release\sum_squared_error.obj
+         Release\function_regression_testing.obj
+         Release\inverse_problem_testing.obj
+         Release\pattern_recognition_testing.obj
+         Release\testing_analysis.obj
+         Release\time_series_prediction_testing.obj
+         Release\conjugate_gradient.obj
+         Release\evolutionary_algorithm.obj
+         Release\gradient_descent.obj
+         Release\levenberg_marquardt_algorithm.obj
+         Release\newton_method.obj
+         Release\quasi_newton_method.obj
+         Release\random_search.obj
+         Release\training_algorithm.obj
+         Release\training_rate_algorithm.obj
+         Release\training_strategy.obj
+         Release\linear_algebraic_equations.obj
+         Release\numerical_differentiation.obj
+         Release\numerical_integration.obj
+         Release\stdafx.obj
+         Generating code
+         Finished generating code
+         OpenNN.vcxproj -> C:\CIMNE\Codi\opennn09\Projects\OpenNN\Release\OpenNN.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\CIMNE\Codi\opennn09\Projects\OpenNN\Release\OpenNN.exe;#1" /manifest Release\OpenNN.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\OpenNN.unsuccessfulbuild".
+         Touching "Release\OpenNN.lastbuildstate".
+     1>Done Building Project "C:\CIMNE\Codi\opennn09\Projects\OpenNN\OpenNN\OpenNN.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.59
